@@ -69,7 +69,9 @@ public class QuizEditText extends EditText {
 							start++;
 						}
 					}
-					editTextListner.hasLetters(hasLetters(originalText));
+					if (editTextListner!=null) {
+						editTextListner.hasLetters(hasLetters(originalText));
+					}
 					setLetterChip();
 					setSelection(start);
 					addTextChangedListener(textWather);
@@ -132,6 +134,7 @@ public class QuizEditText extends EditText {
 			}
 			// set chips span 
 			setText(ssb);
+			setSelection(0);
 		}
 
 		/**
